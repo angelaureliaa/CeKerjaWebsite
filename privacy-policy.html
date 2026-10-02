@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kebijakan Privasi | CeKerja</title>
+  <meta name="description" content="Kebijakan Privasi CeKerja: Transparansi pengolahan data, arsitektur Guest Mode, perlindungan PII, dan hak-hak pengguna sesuai UU PDP No. 27/2022." />
+  <link rel="canonical" href="https://cekerja.app/privacy-policy.html" />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  
+  <style>
+    /* ── Legal Page Styles (Editorial & High-Fidelity) ── */
+    .legal-hero {
+      background: linear-gradient(180deg, var(--teal-50) 0%, var(--off-white) 100%);
+      padding: calc(64px + 3.75rem) 0 var(--sp-12);
+      border-bottom: 1px solid var(--gray-100);
+      text-align: center;
+    }
+    
+    .legal-hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(23, 89, 124, 0.08);
+      color: var(--teal-700);
+      font-size: var(--text-xs);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 0.375rem 0.875rem;
+      border-radius: var(--r-full);
+      margin-bottom: var(--sp-4);
+      border: 1px solid rgba(23, 89, 124, 0.15);
+    }
+    
+    .legal-hero__title {
+      font-size: var(--text-4xl);
+      font-weight: 800;
+      color: var(--teal-900);
+      letter-spacing: -0.02em;
+      margin-bottom: var(--sp-3);
+    }
+    
+    .legal-hero__meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--sp-6);
+      font-size: var(--text-sm);
+      color: var(--gray-600);
+    }
+    
+    .legal-hero__meta-item {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    
+    .legal-layout {
+      padding: var(--sp-12) 0 var(--sp-20);
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: var(--sp-10);
+      align-items: start;
+    }
+    
+    @media (max-width: 900px) {
+      .legal-layout {
+        grid-template-columns: 1fr;
+        gap: var(--sp-8);
+      }
+    }
+    
+    /* ── Sticky Sidebar TOC ── */
+    .legal-toc-card {
+      position: sticky;
+      top: 90px;
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-radius: var(--r-lg);
+      padding: var(--sp-6);
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .legal-toc-card h3 {
+      font-size: var(--text-sm);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--gray-400);
+      margin-bottom: var(--sp-4);
+    }
+    
+    .legal-toc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .legal-toc-list a {
+      font-size: 0.84rem;
+      color: var(--gray-600);
+      line-height: 1.4;
+      display: block;
+      padding: 0.3rem 0.5rem;
+      border-radius: var(--r-sm);
+      transition: all var(--t-fast);
+    }
+    
+    .legal-toc-list a:hover {
+      background: var(--teal-50);
+      color: var(--teal-800);
+      font-weight: 600;
+    }
+    
+    /* ── Main Legal Content Cards ── */
+    .legal-content {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-8);
+    }
+    
+    .legal-card {
+      background: var(--white);
+      border: 1px solid var(--gray-100);
+      border-radius: var(--r-xl);
+      padding: var(--sp-8);
+      box-shadow: var(--shadow-xs);
+      transition: box-shadow var(--t-fast);
+    }
+    
+    .legal-card:hover {
+      box-shadow: var(--shadow-sm);
+    }
+    
+    .legal-card h2 {
+      font-size: var(--text-xl);
+      font-weight: 800;
+      color: var(--teal-900);
+      margin-bottom: var(--sp-4);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    
+    .legal-card h2 .sec-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--teal-50);
+      color: var(--teal-700);
+      font-size: var(--text-sm);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+    
+    .legal-card h3 {
+      font-size: var(--text-base);
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-top: var(--sp-6);
+      margin-bottom: var(--sp-3);
+    }
+    
+    .legal-card p {
+      font-size: 0.9375rem;
+      line-height: 1.75;
+      color: var(--gray-600);
+      margin-bottom: var(--sp-4);
+    }
+    
+    .legal-card p:last-child {
+      margin-bottom: 0;
+    }
+    
+    .legal-card ul, .legal-card ol {
+      padding-left: 1.25rem;
+      margin-bottom: var(--sp-4);
+    }
+    
+    .legal-card li {
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      color: var(--gray-600);
+      margin-bottom: 0.5rem;
+    }
+    
+    /* ── Table Styling ── */
+    .legal-table-wrapper {
+      overflow-x: auto;
+      margin: var(--sp-6) 0;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--r-md);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.03);
+    }
+    
+    .legal-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      text-align: left;
+    }
+    
+    .legal-table th {
+      background: var(--teal-50);
+      color: var(--teal-900);
+      font-weight: 700;
+      padding: 1.125rem 1.5rem;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    
+    .legal-table td {
+      padding: 1.125rem 1.5rem;
+      border-bottom: 1px solid var(--gray-100);
+      color: var(--gray-600);
+      line-height: 1.65;
+      vertical-align: top;
+    }
+    
+    .legal-table tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .legal-table tr:nth-child(even) td {
+      background: rgba(248, 250, 251, 0.6);
+    }
+    
+    /* ── Callout Box ── */
+    .callout-box {
+      background: var(--teal-50);
+      border-left: 4px solid var(--teal-700);
+      border-radius: var(--r-md);
+      padding: var(--sp-5);
+      margin: var(--sp-6) 0;
+    }
+    
+    .callout-box--warning {
+      background: #FFFBEB;
+      border-left-color: var(--amber-500);
+    }
+    
+    .callout-box__title {
+      font-weight: 700;
+      font-size: 0.9375rem;
+      color: var(--teal-900);
+      margin-bottom: 0.35rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .callout-box--warning .callout-box__title {
+      color: #92400E;
+    }
+    
+    .callout-box p {
+      font-size: 0.875rem !important;
+      margin-bottom: 0 !important;
+      line-height: 1.65 !important;
+    }
+    
+    /* Status Badge */
+    .badge-status {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.35rem 0.75rem;
+      border-radius: var(--r-sm);
+      font-size: var(--text-xs);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .badge-status--safe { background: var(--sage-100); color: var(--sage-500); }
+    .badge-status--danger { background: var(--coral-100); color: var(--coral-600); }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+       ============================================================ -->
+  <nav class="nav-lux" id="main-nav" role="navigation" aria-label="Navigasi utama">
+    <div class="nav-lux__inner">
+
+      <a href="index.html" class="nav-lux__logo" aria-label="CeKerja Halaman Utama">
+        <img
+          src="assets/icons/CeKerja App icon 1-3.png"
+          alt="CeKerja logo"
+          class="nav-lux__logo-img"
+          width="32" height="32"
+        />
+        <span class="nav-lux__logo-wordmark">CeKerja</span>
+      </a>
+
+      <!-- Center links -->
+      <div class="nav-lux__links" role="menubar" aria-label="Menu utama">
+        <a href="index.html#cara-kerja" class="nav-lux__link" role="menuitem">Cara Kerja</a>
+        <a href="index.html#fitur"      class="nav-lux__link" role="menuitem">Fitur</a>
+        <a href="index.html#tim"        class="nav-lux__link" role="menuitem">Tim</a>
+      </div>
+
+      <!-- Right: Privacy pill + hamburger -->
+      <div class="nav-lux__right">
+        <a href="privacy-policy.html" class="nav-lux__pill active" aria-label="Kebijakan Privasi CeKerja">
+          Kebijakan Privasi
+        </a>
+        <button
+          class="nav-lux__burger"
+          aria-label="Buka menu navigasi"
+          aria-expanded="false"
+          aria-controls="mobile-nav-lux"
+        >
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="nav-lux__mobile" id="mobile-nav-lux" role="menu" aria-label="Menu navigasi mobile">
+      <a href="index.html#cara-kerja" class="nav-lux__link" role="menuitem">Cara Kerja</a>
+      <a href="index.html#fitur"      class="nav-lux__link" role="menuitem">Fitur</a>
+      <a href="index.html#tim"        class="nav-lux__link" role="menuitem">Tim</a>
+      <a href="privacy-policy.html"   class="nav-lux__link" role="menuitem">Kebijakan Privasi</a>
+    </div>
+  </nav>
+
+  <main id="main-content">
+
+    <!-- ============================================================
+         LEGAL HERO HEADER
+         ============================================================ -->
+    <section class="legal-hero">
+      <div class="container container--sm">
+        <div class="legal-hero__badge">Dokumen Legal Resmi</div>
+        <h1 class="legal-hero__title">Kebijakan Privasi</h1>
+        <div class="legal-hero__meta">
+          <div class="legal-hero__meta-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Berlaku Efektif: <strong>25 September 2026</strong>
+          </div>
+          <div class="legal-hero__meta-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            Versi: <strong>2.0 Final</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         MAIN LAYOUT (TOC + CONTENT)
+         ============================================================ -->
+    <div class="container">
+      <div class="legal-layout">
+
+        <!-- Sticky Table of Contents -->
+        <aside class="legal-toc-card" aria-label="Daftar Isi">
+          <h3>Daftar Isi</h3>
+          <ul class="legal-toc-list">
+            <li><a href="#sec-1">1. Pendahuluan & Kepatuhan</a></li>
+            <li><a href="#sec-2">2. Guest Mode & Local-First</a></li>
+            <li><a href="#sec-3">3. NotificationListenerService</a></li>
+            <li><a href="#sec-4">4. Analisis Deteksi 2 Tier</a></li>
+            <li><a href="#sec-5">5. Retensi & Penghapusan Data</a></li>
+            <li><a href="#sec-6">6. Hotline BP2MI</a></li>
+            <li><a href="#sec-7">7. Keamanan & Data Breach</a></li>
+            <li><a href="#sec-8">8. Batasan Tanggung Jawab</a></li>
+            <li><a href="#sec-9">9. Hak & Kontrol Pengguna</a></li>
+            <li><a href="#sec-10">10. Pembaruan Kebijakan</a></li>
+            <li><a href="#sec-11">11. Kontak Kami</a></li>
+          </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="legal-content">
+
+          <!-- Section 1 -->
+          <article class="legal-card" id="sec-1">
+            <h2><span class="sec-badge">1</span> Pendahuluan &amp; Dasar Kepatuhan</h2>
+            <p>
+              Selamat datang di <strong>CeKerja</strong>. Kami berkomitmen penuh untuk melindungi hak privasi kamu dan mengelola data secara transparan, akuntabel, dan terbatas pada tujuan pelindungan pengguna dari potensi penipuan lowongan kerja.
+            </p>
+            <p>
+              Kebijakan Privasi ini disusun berdasarkan kepatuhan terhadap <strong>Undang-Undang Republik Indonesia Nomor 27 Tahun 2022 tentang Pelindungan Data Pribadi (UU PDP)</strong> serta <strong>Google Play User Data Policy</strong> (khususnya mengenai keterbukaan penggunaan izin sensitif dan pemrosesan data di latar belakang).
+            </p>
+            <p>
+              Dokumen ini menjelaskan jenis informasi yang diakses, bagaimana informasi tersebut diproses dan disanitasi, serta hak penuh yang kamu miliki atas data pribadi kamu.
+            </p>
+          </article>
+
+          <!-- Section 2 -->
+          <article class="legal-card" id="sec-2">
+            <h2><span class="sec-badge">2</span> Arsitektur Data: Guest Mode &amp; Local-First (Tanpa Akun)</h2>
+            <p>
+              CeKerja dirancang dari dasar dengan prinsip <em>Privacy-by-Design</em> dan <em>Data Minimization</em>:
+            </p>
+            <ul>
+              <li><strong>Zero-Account Architecture (Tanpa Login):</strong> Kamu tidak perlu membuat akun, mendaftarkan nomor telepon, memberikan alamat email, atau melakukan verifikasi identitas apa pun untuk menggunakan CeKerja.</li>
+              <li><strong>Local-First Storage (Data di HP Kamu):</strong> Seluruh riwayat pemindaian, skor risiko lowongan, catatan indikator kecurigaan, serta preferensi aplikasi disimpan secara lokal di perangkat kamu menggunakan basis data terisolasi SQLite (Drift ORM) dan SharedPreferences.</li>
+              <li><strong>Tidak Ada Profiling:</strong> CeKerja tidak pernah membuat profil pengguna, tidak melacak aktivitas jelajah web, dan tidak memperjualbelikan data apa pun kepada pihak ketiga atau pengiklan.</li>
+            </ul>
+          </article>
+
+          <!-- Section 3 -->
+          <article class="legal-card" id="sec-3">
+            <h2><span class="sec-badge">3</span> Pengumpulan Data, Izin Sensitif &amp; Transparansi Akses</h2>
+            <p>
+              Untuk memberikan perlindungan deteksi dini secara otomatis saat pesan tawaran kerja masuk, CeKerja memerlukan izin akses khusus Android: <code>BIND_NOTIFICATION_LISTENER_SERVICE</code>.
+            </p>
+            
+            <h3>Prominent Disclosure: Cakupan Notifikasi (Tabel 1)</h3>
+            <p>
+              CeKerja secara ketat menyaring notifikasi yang masuk di tingkat sistem bawaan HP sebelum teks diurai. Hanya notifikasi dari aplikasi komunikasi publik yang diproses, sementara notifikasi sensitif dikecualikan sepenuhnya:
+            </p>
+
+            <div class="legal-table-wrapper">
+              <table class="legal-table" aria-label="Tabel Pemrosesan dan Pengecualian Notifikasi">
+                <thead>
+                  <tr>
+                    <th>Kategori Notifikasi</th>
+                    <th>Aplikasi / Sumber</th>
+                    <th>Status Pemrosesan</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Pesan Instan &amp; Komunikasi</strong></td>
+                    <td>WhatsApp, Telegram, SMS, Gmail</td>
+                    <td><span class="badge-status badge-status--safe">DIPROSES</span> (Hanya teks tawaran kerja)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Keuangan &amp; Perbankan</strong></td>
+                    <td>BCA, Mandiri, BRI, BNI, GoPay, OVO, Dana, ShopeePay, dll.</td>
+                    <td><span class="badge-status badge-status--danger">DIKECUALIKAN</span> (Tidak pernah dibaca/disimpan)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Kode Keamanan &amp; OTP</strong></td>
+                    <td>SMS / WA Kode OTP &amp; Verifikasi 2FA</td>
+                    <td><span class="badge-status badge-status--danger">DIKECUALIKAN</span> (Filter otomatis membuang OTP)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Pesan Pribadi / Non-Lowongan</strong></td>
+                    <td>Percakapan pribadi harian</td>
+                    <td><span class="badge-status badge-status--danger">DIKECUALIKAN</span> (Langsung dibuang di memori RAM)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>Pengolahan Gambar / Tangkapan Layar (OCR On-Device)</h3>
+            <p>
+              Jika kamu memilih fitur pemindaian manual dengan mengunggah gambar screenshot lowongan kerja, ekstraksi teks diproses 100% secara <em>on-device</em> menggunakan <strong>Google ML Kit Text Recognition</strong>. Gambar asli tidak pernah diunggah ke internet dan langsung dihapus dari memori sementara perangkat kamu setelah teks selesai dibaca.
+            </p>
+          </article>
+
+          <!-- Section 4 -->
+          <article class="legal-card" id="sec-4">
+            <h2><span class="sec-badge">4</span> Mekanisme Deteksi 2 Tier &amp; Perlindungan Privasi Cloud AI</h2>
+            <p>
+              CeKerja mengombinasikan dua tingkat pemrosesan untuk memastikan deteksi presisi sekaligus menjaga privasi:
+            </p>
+            
+            <h3>Tier 1: On-Device Heuristic Engine (100% Offline)</h3>
+            <p>
+              Teks notifikasi terlebih dahulu dianalisis oleh mesin pola lokal di perangkat. Mesin ini mengevaluasi indikator kecurigaan seperti regex nomor HP luar negeri, kata kunci "deposit", "uang pendaftaran", "tugas like &amp; subscribe", dan tautan tak resmi.
+            </p>
+
+            <h3>Tier 2: Cloud AI Engine (Google Gemini API)</h3>
+            <p>
+              Jika teks membutuhkan analisis konteks bahasa yang lebih kompleks, CeKerja menggunakan Google Gemini API untuk mendapatkan skor risiko mendalam.
+            </p>
+
+            <h3>Redaksi Otomatis Data Pribadi / PII (Tabel 2)</h3>
+            <p>
+              Sebelum teks dikirimkan ke Tier 2 (Gemini API), sistem CeKerja di HP kamu secara otomatis melakukan sanitasi dan redaksi pada data pribadi (PII):
+            </p>
+
+            <div class="legal-table-wrapper">
+              <table class="legal-table" aria-label="Tabel Sanitasi Data PII">
+                <thead>
+                  <tr>
+                    <th>Elemen Data</th>
+                    <th>Sebelum Redaksi</th>
+                    <th>Setelah Redaksi (Payload API)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Nama Pengirim</strong></td>
+                    <td>"Budi Santoso (HRD Fake)"</td>
+                    <td><code>N/A (Disanitasi)</code></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Nomor Telepon</strong></td>
+                    <td>"+62 812-3456-7890"</td>
+                    <td><code>[REDACTED_PHONE]</code></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Data Finansial / Rekening</strong></td>
+                    <td>"Transfer ke BCA 12345678"</td>
+                    <td><code>[REDACTED_FINANCIAL]</code></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Teks Utama Lowongan</strong></td>
+                    <td>Detail tawaran kerja &amp; syarat</td>
+                    <td>Dikirim untuk analisis indikator penipuan</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="callout-box callout-box--warning">
+              <div class="callout-box__title">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                Pengungkapan Khusus: Penggunaan Google Gemini API (Free Tier)
+              </div>
+              <p>
+                CeKerja memanfaatkan Google Gemini API (Free Tier / Pay-as-you-go). Dengan menggunakan analisis Tier 2, pengguna memahami bahwa teks lowongan yang telah disanitasi dapat diproses oleh Google sesuai dengan syarat dan ketentuan Google AI Studio Service.<br />
+                <strong>Mitigasi Privasi CeKerja:</strong> (1) Seluruh PII (nama, HP, rekening) diredaksi di HP sebelum dikirim, (2) Tidak ada identifier perangkat atau identitas pengguna yang disertakan dalam permintaan API, (3) Pengguna dapat menonaktifkan Tier 2 kapan saja melalui Pengaturan Aplikasi (Opt-Out).
+              </p>
+            </div>
+          </article>
+
+          <!-- Section 5 -->
+          <article class="legal-card" id="sec-5">
+            <h2><span class="sec-badge">5</span> Retensi &amp; Penghapusan Data (Data Retention &amp; Deletion)</h2>
+            <ul>
+              <li><strong>Efemeritas Pemrosesan Cloud (Ephemeral Processing):</strong> Teks lowongan yang dikirim ke Tier 2 Gemini API hanya diproses secara sementara di memori server selama durasi inferensi API dan langsung dibuang setelah skor risiko selesai dihitung.</li>
+              <li><strong>Penghapusan Riwayat Lokal:</strong> Kamu dapat menghapus seluruh riwayat pemindaian kapan saja melalui tombol <em>"Hapus Data Riwayat"</em> di menu Pengaturan CeKerja.</li>
+              <li><strong>Uninstalasi Aplikasi:</strong> Menghapus aplikasi CeKerja dari perangkat kamu akan menghapus seluruh basis data lokal (SQLite) secara permanen dari penyimpanan perangkat.</li>
+            </ul>
+          </article>
+
+          <!-- Section 6 -->
+          <article class="legal-card" id="sec-6">
+            <h2><span class="sec-badge">6</span> Integrasi Hotline Pengaduan Resmi (BP2MI)</h2>
+            <p>
+              CeKerja menyediakan fitur tombol akses cepat ke Hotline Resmi <strong>Badan Pelindungan Pekerja Migran Indonesia (BP2MI)</strong> pada nomor <code>+62 800 1000</code> / <code>+62 21 29247777</code> untuk membantu penanganan potensi Tindak Pidana Perdagangan Orang (TPPO) atau penipuan kerja luar negeri.
+            </p>
+            <p>
+              Fitur ini bekerja menggunakan perintah standar Android <code>Intent.ACTION_DIAL</code> yang hanya membuka aplikasi Dial/Telepon bawaan HP kamu dengan nomor yang sudah terisi. CeKerja tidak pernah melakukan panggilan telepon otomatis tanpa persetujuan dan konfirmasi langsung dari kamu.
+            </p>
+          </article>
+
+          <!-- Section 7 -->
+          <article class="legal-card" id="sec-7">
+            <h2><span class="sec-badge">7</span> Keamanan Data &amp; Pelaporan Pelanggaran (Breach Notification)</h2>
+            <p>
+              Kami menerapkan standar keamanan teknis untuk melindungi data saat dalam perjalanan maupun saat tersimpan:
+            </p>
+            <ul>
+              <li><strong>Enkripsi Transmisi:</strong> Seluruh komunikasi data dengan API menggunakan enkripsi standar industri HTTPS / TLS 1.3.</li>
+              <li><strong>Isolasi Sandbox:</strong> Basis data lokal aplikasi diisolasi oleh keamanan kernel OS Android sehingga aplikasi lain tidak dapat mengintip data CeKerja.</li>
+              <li><strong>Pemberitahuan Pelanggaran Data (Data Breach Notification):</strong> Sesuai dengan <strong>UU PDP No. 27/2022 Pasal 46</strong>, apabila terjadi kegagalan perlindungan data pribadi pada infrastruktur transmisi kami yang berdampak pada pengguna, CeKerja berkomitmen memberikan pemberitahuan tertulis resmi kepada pengguna dan Lembaga Perlindungan Data Pribadi dalam waktu maksimal <strong>3 x 24 jam (72 jam)</strong> sejak insiden diketahui.</li>
+            </ul>
+          </article>
+
+          <!-- Section 8 -->
+          <article class="legal-card" id="sec-8">
+            <h2><span class="sec-badge">8</span> Batasan Tanggung Jawab (Disclaimer)</h2>
+            <p>
+              Hasil analisis CeKerja (Skor Risiko dan label status: "Rendah", "Sedang", "Tinggi") merupakan indikasi berbasis model heuristik dan analisis bahasa statistik, bukan sebuah kepastian atau vonis hukum yang mengikat.
+            </p>
+            <p>
+              Pengguna disarankan untuk tetap melakukan verifikasi independen ke instansi pemerintah terkait (seperti SISKOP2MI / Kementerian Ketenagakerjaan) atau situs resmi perusahaan sebelum menyetujui tawaran kerja atau melakukan transaksi finansial apa pun.
+            </p>
+          </article>
+
+          <!-- Section 9 -->
+          <article class="legal-card" id="sec-9">
+            <h2><span class="sec-badge">9</span> Hak Pengguna &amp; Pengendalian Privasi (User Rights &amp; Opt-Out)</h2>
+            <p>
+              Sesuai UU PDP No. 27/2022, kamu memiliki kendali penuh atas privasi data kamu:
+            </p>
+            <ul>
+              <li><strong>Pencabutan Izin Notifikasi:</strong> Kamu dapat mematikan izin Notifikasi kapan saja via <em>Pengaturan HP &gt; Akses Notifikasi &gt; Matikan CeKerja</em>. Kamu tetap bisa menggunakan fitur pemindaian manual.</li>
+              <li><strong>Hak Opt-Out Cloud AI:</strong> Kamu dapat menonaktifkan analisis Tier 2 (Gemini API) di menu Pengaturan Aplikasi dan memilih hanya menggunakan deteksi offline Tier 1.</li>
+              <li><strong>Hak Penghapusan Data:</strong> Kamu dapat menghapus riwayat analisis lokal kapan saja.</li>
+            </ul>
+          </article>
+
+          <!-- Section 10 -->
+          <article class="legal-card" id="sec-10">
+            <h2><span class="sec-badge">10</span> Pembaruan Kebijakan Privasi</h2>
+            <p>
+              Kebijakan Privasi ini dapat diperbarui dari waktu ke waktu untuk menyesuaikan pengembangan fitur aplikasi atau pembaruan regulasi hukum yang berlaku.
+            </p>
+            <p>
+              Perubahan bermakna akan diinformasikan melalui aplikasi atau melalui pembaruan di halaman web ini. Tanggal pembaruan terakhir akan selalu dicantumkan di bagian atas dokumen ini.
+            </p>
+          </article>
+
+          <!-- Section 11 -->
+          <article class="legal-card" id="sec-11">
+            <h2><span class="sec-badge">11</span> Kontak Kami</h2>
+            <p>
+              Jika kamu memiliki pertanyaan, saran, atau ingin melaksanakan hak-hak privasi kamu terkait Kebijakan Privasi ini, silakan hubungi kami melalui:
+            </p>
+            <ul>
+              <li><strong>Email:</strong> <a href="mailto:cekerja2026@gmail.com">cekerja2026@gmail.com</a></li>
+              <li><strong>Proyek:</strong> CeKerja — Personal Leadership Project (PLP), Young Leaders for Indonesia (YLI) National 2026</li>
+            </ul>
+          </article>
+
+        </div><!-- /.legal-content -->
+
+      </div><!-- /.legal-layout -->
+    </div><!-- /.container -->
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer-light" role="contentinfo">
+    <div class="container">
+      <div class="footer-light__grid">
+
+        <!-- Brand column -->
+        <div class="footer-light__col">
+          <a href="index.html" class="footer-light__logo-link" aria-label="CeKerja Halaman Utama">
+            <img
+              src="assets/icons/CeKerja App icon 1-3.png"
+              alt="CeKerja logo"
+              class="footer-light__logo-img"
+              width="34" height="34"
+            />
+            <span class="footer-light__brand-name">CeKerja</span>
+          </a>
+          <p class="footer-light__tagline">
+            Alat bantu deteksi lowongan kerja palsu untuk pencari kerja Indonesia. Gratis, tanpa akun.
+          </p>
+          <div class="footer-light__yli">
+            Supported by Young Leaders for Indonesia (YLI)
+          </div>
+        </div>
+
+        <!-- Nav column -->
+        <div class="footer-light__col">
+          <h4>Navigasi</h4>
+          <ul>
+            <li><a href="index.html#cara-kerja">Cara Kerja</a></li>
+            <li><a href="index.html#fitur">Fitur</a></li>
+            <li><a href="index.html#tim">Tim</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal column -->
+        <div class="footer-light__col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy-policy.html">Kebijakan Privasi</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact column -->
+        <div class="footer-light__col">
+          <h4>Kontak</h4>
+          <ul>
+            <li>
+              <a href="mailto:cekerja2026@gmail.com" aria-label="Kirim email ke cekerja2026@gmail.com">
+                cekerja2026@gmail.com
+              </a>
+            </li>
+          </ul>
+        </div>
+
+      </div><!-- /.footer-light__grid -->
+
+      <div class="footer-light__bottom">
+        <span>&copy; 2026 CeKerja. Personal Leadership Project &nbsp;·&nbsp; YLI National 2026.</span>
+      </div>
+
+    </div><!-- /.container -->
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    /* ── Nav scroll shadow ── */
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', function () {
+      nav.classList.toggle('scrolled', window.scrollY > 8);
+    }, { passive: true });
+
+    /* ── Hamburger toggle ── */
+    const burger     = document.querySelector('.nav-lux__burger');
+    const mobileMenu = document.getElementById('mobile-nav-lux');
+
+    if (burger && mobileMenu) {
+      burger.addEventListener('click', function () {
+        const isOpen = mobileMenu.classList.toggle('open');
+        burger.setAttribute('aria-expanded', String(isOpen));
+        const spans = burger.querySelectorAll('span');
+        if (isOpen) {
+          spans[0].style.transform = 'translateY(7px) rotate(45deg)';
+          spans[1].style.opacity   = '0';
+          spans[2].style.transform = 'translateY(-7px) rotate(-45deg)';
+        } else {
+          spans[0].style.transform = '';
+          spans[1].style.opacity   = '';
+          spans[2].style.transform = '';
+        }
+      });
+
+      mobileMenu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', function () {
+          mobileMenu.classList.remove('open');
+          burger.setAttribute('aria-expanded', 'false');
+          burger.querySelectorAll('span').forEach(function (s) {
+            s.style.transform = '';
+            s.style.opacity   = '';
+          });
+        });
+      });
+    }
+  </script>
+</body>
+</html>

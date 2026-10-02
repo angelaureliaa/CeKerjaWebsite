@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CeKerja | Cara Kerja Section Preview</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --obs-950:   #04090D;
+      --obs-900:   #080F14;
+      --obs-850:   #0C1520;
+      --obs-800:   #101D2A;
+      --obs-750:   #152433;
+      --obs-700:   #1A2E3F;
+
+      --teal-700:  #17597C;
+      --teal-600:  #1E6F97;
+      --teal-500:  #2487B5;
+      --teal-400:  #3D9BBF;
+      --teal-300:  #5DB5D5;
+
+      --sage-500:  #2DBF85;
+      --sage-400:  #3DD494;
+      --sage-glow: rgba(45,191,133,0.40);
+
+      --amber-400: #F59E2A;
+
+      --text-100:  #EDF3F7;
+      --text-200:  rgba(237,243,247,0.82);
+      --text-400:  rgba(237,243,247,0.52);
+      --text-600:  rgba(237,243,247,0.30);
+
+      --line-100:  rgba(237,243,247,0.08);
+      --line-200:  rgba(237,243,247,0.12);
+
+      --teal-glow-sm:  rgba(23,89,124,0.30);
+      --teal-glow-md:  rgba(23,89,124,0.45);
+
+      --font: 'Inter', system-ui, sans-serif;
+    }
+
+    html { font-size: 16px; }
+    body {
+      font-family: var(--font);
+      background: var(--obs-900);
+      color: var(--text-100);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    /* ── Outer section wrapper ── */
+    .ck-section {
+      padding: clamp(5rem, 10vw, 8rem) 0;
+      background: var(--obs-900);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Ambient background glow */
+    .ck-section::before {
+      content: '';
+      position: absolute;
+      width: 800px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(ellipse,
+        rgba(23,89,124,0.14) 0%,
+        transparent 68%);
+      top: -100px; left: 50%;
+      transform: translateX(-50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .ck-section::after {
+      content: '';
+      position: absolute;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(ellipse,
+        rgba(45,191,133,0.06) 0%,
+        transparent 70%);
+      bottom: 0; right: -100px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .ck-container {
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 clamp(1.25rem, 5vw, 3rem);
+    }
+
+    /* ══════════════════════════════════════
+       HEADER BLOCK
+       ══════════════════════════════════════ */
+    .ck-header {
+      text-align: center;
+      margin-bottom: clamp(3.5rem, 6vw, 5.5rem);
+    }
+
+    /* Pill badge */
+    .ck-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(23,89,124,0.15);
+      border: 1px solid rgba(23,89,124,0.30);
+      color: var(--teal-400);
+      font-size: 0.6875rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 7px 16px;
+      border-radius: 100px;
+      margin-bottom: 1.75rem;
+    }
+
+    .ck-pill__dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--teal-400);
+      box-shadow: 0 0 8px var(--teal-glow-md);
+      animation: ck-breathe 2.6s ease-in-out infinite;
+    }
+
+    @keyframes ck-breathe {
+      0%,100% { opacity: 1; box-shadow: 0 0 8px var(--teal-glow-md); }
+      50%      { opacity: 0.55; box-shadow: 0 0 4px var(--teal-glow-sm); }
+    }
+
+    /* Main title */
+    .ck-title {
+      font-size: clamp(1.75rem, 4.5vw, 2.875rem);
+      font-weight: 800;
+      line-height: 1.18;
+      letter-spacing: -0.035em;
+      color: var(--text-100);
+      margin-bottom: 1.25rem;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Subtitle */
+    .ck-subtitle {
+      font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
+      font-weight: 400;
+      line-height: 1.80;
+      color: var(--text-400);
+      max-width: 580px;
+      margin: 0 auto;
+    }
+
+    /* ══════════════════════════════════════
+       PIPELINE FLOW
+       ══════════════════════════════════════ */
+    .ck-pipeline {
+      position: relative;
+      margin-bottom: clamp(3.5rem, 6vw, 5rem);
+    }
+
+    /* The connecting track (desktop) */
+    .ck-pipeline__track {
+      display: none; /* shown at ≥ 900px via media query */
+      position: absolute;
+      top: 44px; /* vertically centres with node icon */
+      left: calc(16.666% + 28px);
+      right: calc(16.666% + 28px);
+      height: 2px;
+      z-index: 0;
+    }
+
+    /* Base hairline */
+    .ck-pipeline__track-line {
+      position: absolute;
+      inset: 0;
+      border-radius: 2px;
+      background: var(--line-200);
+    }
+
+    /* Animated glow fill on top */
+    .ck-pipeline__track-glow {
+      position: absolute;
+      inset: 0;
+      border-radius: 2px;
+      background: linear-gradient(90deg,
+        var(--teal-700) 0%,
+        var(--teal-400) 50%,
+        rgba(61,155,191,0.30) 100%);
+      box-shadow: 0 0 12px rgba(36,135,181,0.50);
+      animation: ck-flow 3.2s ease-in-out infinite;
+      transform-origin: left center;
+    }
+
+    @keyframes ck-flow {
+      0%   { opacity: 0.55; transform: scaleX(0.90); }
+      50%  { opacity: 1;    transform: scaleX(1); }
+      100% { opacity: 0.55; transform: scaleX(0.90); }
+    }
+
+    /* Dots at junctions */
+    .ck-pipeline__dot {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--teal-400);
+      box-shadow: 0 0 14px var(--teal-glow-md), 0 0 4px var(--teal-400);
+      animation: ck-breathe 2.6s ease-in-out infinite;
+    }
+    .ck-pipeline__dot:nth-child(3) { animation-delay: 0.6s; }
+    .ck-pipeline__dot:nth-child(4) { animation-delay: 1.2s; }
+
+    /* Nodes grid */
+    .ck-nodes {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Individual node card */
+    .ck-node {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--line-100);
+      border-radius: 20px;
+      padding: clamp(1.5rem, 3vw, 2rem) clamp(1.25rem, 2.5vw, 1.75rem);
+      position: relative;
+      overflow: hidden;
+      transition: background 0.35s ease, border-color 0.35s ease, transform 0.35s cubic-bezier(0.22,1,0.36,1);
+    }
+
+    .ck-node:hover {
+      background: rgba(23,89,124,0.07);
+      border-color: rgba(23,89,124,0.22);
+      transform: translateY(-4px);
+    }
+
+    /* Top-edge glow strip on hover */
+    .ck-node::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      border-radius: 20px 20px 0 0;
+      background: linear-gradient(90deg, var(--teal-700), var(--teal-400), transparent);
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+    .ck-node:hover::before { opacity: 1; }
+
+    /* Phase label + icon row */
+    .ck-node__meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.25rem;
+    }
+
+    .ck-node__phase {
+      font-size: 0.6875rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal-400);
+    }
+
+    .ck-node__icon {
+      width: 40px; height: 40px;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .ck-node__icon--01 {
+      background: rgba(23,89,124,0.18);
+      border: 1px solid rgba(23,89,124,0.25);
+    }
+    .ck-node__icon--02 {
+      background: rgba(45,191,133,0.10);
+      border: 1px solid rgba(45,191,133,0.18);
+    }
+    .ck-node__icon--03 {
+      background: rgba(245,158,42,0.10);
+      border: 1px solid rgba(245,158,42,0.18);
+    }
+
+    /* Node separator hairline */
+    .ck-node__sep {
+      width: 100%;
+      height: 1px;
+      background: var(--line-100);
+      margin-bottom: 1.25rem;
+    }
+
+    .ck-node__title {
+      font-size: clamp(1rem, 1.6vw, 1.125rem);
+      font-weight: 700;
+      color: var(--text-100);
+      margin-bottom: 0.6rem;
+      line-height: 1.3;
+    }
+
+    .ck-node__desc {
+      font-size: 0.875rem;
+      font-weight: 400;
+      color: var(--text-400);
+      line-height: 1.80;
+    }
+
+    /* ── Mobile connector (vertical) ── */
+    .ck-node-connector {
+      display: flex;
+      justify-content: center;
+      padding: 0.25rem 0;
+    }
+
+    .ck-node-connector__line {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .ck-node-connector__segment {
+      width: 1.5px;
+      height: 8px;
+      background: var(--teal-700);
+      border-radius: 2px;
+      opacity: 0.5;
+    }
+
+    .ck-node-connector__dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--teal-400);
+      box-shadow: 0 0 10px var(--teal-glow-md);
+      animation: ck-breathe 2.6s ease-in-out infinite;
+    }
+
+    /* ══════════════════════════════════════
+       TIER CARDS
+       ══════════════════════════════════════ */
+    .ck-tiers {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+
+    .ck-tier {
+      border-radius: 20px;
+      padding: clamp(1.75rem, 3.5vw, 2.5rem);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s ease;
+    }
+
+    .ck-tier:hover { transform: translateY(-5px); }
+
+    /* Card A | Local (teal toned) */
+    .ck-tier--a {
+      background: linear-gradient(145deg,
+        rgba(23,89,124,0.18) 0%,
+        rgba(15,69,96,0.10) 60%,
+        rgba(8,21,30,0.05) 100%);
+      border: 1px solid rgba(23,89,124,0.22);
+    }
+    .ck-tier--a:hover {
+      box-shadow:
+        0 24px 56px rgba(0,0,0,0.45),
+        0 0 0 1px rgba(23,89,124,0.30),
+        0 0 40px rgba(23,89,124,0.12);
+    }
+
+    /* Card B | AI (purple/violet toned) */
+    .ck-tier--b {
+      background: linear-gradient(145deg,
+        rgba(109,40,217,0.12) 0%,
+        rgba(76,29,149,0.08) 60%,
+        rgba(8,21,30,0.05) 100%);
+      border: 1px solid rgba(109,40,217,0.18);
+    }
+    .ck-tier--b:hover {
+      box-shadow:
+        0 24px 56px rgba(0,0,0,0.45),
+        0 0 0 1px rgba(109,40,217,0.25),
+        0 0 40px rgba(109,40,217,0.08);
+    }
+
+    /* Decorative corner accent */
+    .ck-tier__corner {
+      position: absolute;
+      top: 0; right: 0;
+      width: 180px; height: 180px;
+      border-radius: 0 20px 0 180px;
+      pointer-events: none;
+    }
+    .ck-tier--a .ck-tier__corner {
+      background: radial-gradient(circle at 100% 0%,
+        rgba(23,89,124,0.18) 0%, transparent 60%);
+    }
+    .ck-tier--b .ck-tier__corner {
+      background: radial-gradient(circle at 100% 0%,
+        rgba(109,40,217,0.12) 0%, transparent 60%);
+    }
+
+    /* Header tag */
+    .ck-tier__tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.625rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+    }
+    .ck-tier--a .ck-tier__tag {
+      background: rgba(23,89,124,0.20);
+      border: 1px solid rgba(23,89,124,0.30);
+      color: var(--teal-400);
+    }
+    .ck-tier--b .ck-tier__tag {
+      background: rgba(109,40,217,0.14);
+      border: 1px solid rgba(109,40,217,0.22);
+      color: #C4B5FD;
+    }
+
+    .ck-tier__tag-dot {
+      width: 5px; height: 5px; border-radius: 50%; background: currentColor;
+    }
+
+    /* Icon */
+    .ck-tier__icon {
+      width: 54px; height: 54px;
+      border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+    .ck-tier--a .ck-tier__icon {
+      background: rgba(23,89,124,0.20);
+      border: 1px solid rgba(23,89,124,0.28);
+      box-shadow: 0 4px 20px rgba(23,89,124,0.20);
+    }
+    .ck-tier--b .ck-tier__icon {
+      background: rgba(109,40,217,0.14);
+      border: 1px solid rgba(109,40,217,0.22);
+      box-shadow: 0 4px 20px rgba(109,40,217,0.15);
+    }
+
+    /* Title */
+    .ck-tier__title {
+      font-size: clamp(1.25rem, 2.2vw, 1.5rem);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      color: var(--text-100);
+      margin-bottom: 0.875rem;
+      line-height: 1.25;
+    }
+
+    /* Description */
+    .ck-tier__desc {
+      font-size: 0.9375rem;
+      font-weight: 400;
+      color: var(--text-400);
+      line-height: 1.80;
+      margin-bottom: 2rem;
+    }
+
+    /* Separator */
+    .ck-tier__sep {
+      width: 100%; height: 1px;
+      margin-bottom: 1.75rem;
+    }
+    .ck-tier--a .ck-tier__sep { background: rgba(23,89,124,0.20); }
+    .ck-tier--b .ck-tier__sep { background: rgba(109,40,217,0.16); }
+
+    /* Checklist */
+    .ck-checklist {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .ck-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .ck-check__icon {
+      flex-shrink: 0;
+      width: 22px; height: 22px;
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      margin-top: 1px;
+    }
+    .ck-tier--a .ck-check__icon {
+      background: rgba(45,191,133,0.12);
+      border: 1px solid rgba(45,191,133,0.20);
+    }
+    .ck-tier--b .ck-check__icon {
+      background: rgba(167,139,250,0.10);
+      border: 1px solid rgba(167,139,250,0.18);
+    }
+
+    .ck-check__text {
+      font-size: 0.9rem;
+      font-weight: 500;
+      line-height: 1.65;
+    }
+    .ck-tier--a .ck-check__text { color: rgba(237,243,247,0.78); }
+    .ck-tier--b .ck-check__text { color: rgba(237,243,247,0.78); }
+
+    /* ══════════════════════════════════════
+       RESPONSIVE
+       ══════════════════════════════════════ */
+
+    /* Hide mobile connectors at larger sizes */
+    @media (min-width: 900px) {
+      .ck-node-connector { display: none; }
+
+      .ck-pipeline__track { display: block; }
+
+      .ck-nodes {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        align-items: stretch;
+      }
+
+      .ck-tiers {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+      }
+    }
+
+    @media (min-width: 600px) and (max-width: 899px) {
+      .ck-nodes {
+        grid-template-columns: 1fr 1fr;
+      }
+      /* hide connector between 2nd and 3rd on tablet */
+      .ck-node-connector:last-of-type { display: none; }
+
+      .ck-tiers { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<section class="ck-section" id="cara-kerja" aria-labelledby="ck-title">
+  <div class="ck-container">
+
+    <!-- ══════════════════════════════
+         HEADER
+         ══════════════════════════════ -->
+    <header class="ck-header">
+      <div class="ck-pill" role="note">
+        <span class="ck-pill__dot" aria-hidden="true"></span>
+        Sistem Proteksi Dua Tingkat
+      </div>
+
+      <h2 class="ck-title" id="ck-title">
+        Bekerja tenang di balik layar, melindungi sebelum pesan sempat kamu balas.
+      </h2>
+
+      <p class="ck-subtitle">
+        Tanpa perlu membuka aplikasi secara manual. Setiap pesan yang masuk diperiksa secara senyap, menjaga ruang pribadimu tetap aman dari manipulasi.
+      </p>
+    </header>
+
+    <!-- ══════════════════════════════
+         PIPELINE NODES
+         ══════════════════════════════ -->
+    <div class="ck-pipeline" aria-label="Alur sistem proteksi tiga fase">
+
+      <!-- Desktop connecting track (hidden on mobile) -->
+      <div class="ck-pipeline__track" aria-hidden="true">
+        <div class="ck-pipeline__track-line"></div>
+        <div class="ck-pipeline__track-glow"></div>
+        <!-- Junction dots at 1/3 and 2/3 positions -->
+        <div class="ck-pipeline__dot" style="left: 33.33%;"></div>
+        <div class="ck-pipeline__dot" style="left: 66.66%;"></div>
+      </div>
+
+      <!-- Node grid -->
+      <div class="ck-nodes" role="list">
+
+        <!-- Node 1 -->
+        <div class="ck-node" role="listitem">
+          <div class="ck-node__meta">
+            <span class="ck-node__phase">Fase 01 &nbsp;|&nbsp; Pemindaian Pasif</span>
+            <div class="ck-node__icon ck-node__icon--01" aria-hidden="true">
+              <!-- Radar / scan icon -->
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                   stroke="#3D9BBF" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="2"/>
+                <path d="M12 2a10 10 0 0 1 10 10"/>
+                <path d="M12 6a6 6 0 0 1 6 6"/>
+                <path d="M2 12a10 10 0 0 1 10-10"/>
+                <path d="M6 12a6 6 0 0 1 6-6"/>
+                <line x1="12" y1="12" x2="19.5" y2="4.5" stroke="#3D9BBF" stroke-width="1.4" opacity="0.5"/>
+              </svg>
+            </div>
+          </div>
+          <div class="ck-node__sep" aria-hidden="true"></div>
+          <h3 class="ck-node__title">Pemindaian Pasif</h3>
+          <p class="ck-node__desc">
+            Notifikasi dari WhatsApp, Telegram, atau SMS dideteksi seketika saat tiba di sistem Android. Sistem langsung bersiap menganalisis sebelum kamu membaca tawarannya.
+          </p>
+        </div>
+
+        <!-- Mobile connector 1→2 -->
+        <div class="ck-node-connector" aria-hidden="true">
+          <div class="ck-node-connector__line">
+            <div class="ck-node-connector__segment"></div>
+            <div class="ck-node-connector__dot"></div>
+            <div class="ck-node-connector__segment"></div>
+          </div>
+        </div>
+
+        <!-- Node 2 -->
+        <div class="ck-node" role="listitem">
+          <div class="ck-node__meta">
+            <span class="ck-node__phase" style="color: var(--sage-500);">Fase 02 &nbsp;|&nbsp; Perlindungan Data Mandiri</span>
+            <div class="ck-node__icon ck-node__icon--02" aria-hidden="true">
+              <!-- Shield lock icon -->
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                   stroke="var(--sage-500)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L3.5 6.5V12C3.5 16.7 7.2 21.1 12 22.5C16.8 21.1 20.5 16.7 20.5 12V6.5L12 2Z"/>
+                <rect x="9" y="10" width="6" height="5" rx="1" stroke="var(--sage-500)"/>
+                <path d="M12 10V8.5A1.5 1.5 0 0 1 13.5 7h0A1.5 1.5 0 0 1 15 8.5V10" stroke="var(--sage-500)"/>
+              </svg>
+            </div>
+          </div>
+          <div class="ck-node__sep" style="background: rgba(45,191,133,0.12);" aria-hidden="true"></div>
+          <h3 class="ck-node__title">Perlindungan Data Mandiri</h3>
+          <p class="ck-node__desc">
+            Notifikasi perbankan, kode OTP, dan dompet digital langsung disaring dan diabaikan. Nama kontak serta nomor telepon disamarkan langsung di perangkatmu agar privasi tetap utuh.
+          </p>
+        </div>
+
+        <!-- Mobile connector 2→3 -->
+        <div class="ck-node-connector" aria-hidden="true">
+          <div class="ck-node-connector__line">
+            <div class="ck-node-connector__segment"></div>
+            <div class="ck-node-connector__dot" style="background:var(--amber-400);box-shadow:0 0 10px rgba(245,158,42,0.45);animation-delay:0.4s;"></div>
+            <div class="ck-node-connector__segment"></div>
+          </div>
+        </div>
+
+        <!-- Node 3 -->
+        <div class="ck-node" role="listitem">
+          <div class="ck-node__meta">
+            <span class="ck-node__phase" style="color: var(--amber-400);">Fase 03 &nbsp;|&nbsp; Deteksi Cerdas &amp; Sinyal Bahaya</span>
+            <div class="ck-node__icon ck-node__icon--03" aria-hidden="true">
+              <!-- Warning / pulse icon -->
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                   stroke="var(--amber-400)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                <line x1="12" y1="9" x2="12" y2="13"/>
+                <circle cx="12" cy="17" r="0.8" fill="var(--amber-400)" stroke="none"/>
+              </svg>
+            </div>
+          </div>
+          <div class="ck-node__sep" style="background: rgba(245,158,42,0.12);" aria-hidden="true"></div>
+          <h3 class="ck-node__title">Deteksi Cerdas &amp; Sinyal Bahaya</h3>
+          <p class="ck-node__desc">
+            Pola manipulasi psikologis, tawaran tidak wajar, hingga jeratan kerja ilegal dipetakan seketika. Kamu mendapatkan sinyal peringatan yang jelas sebelum sempat merespons perekrut.
+          </p>
+        </div>
+
+      </div><!-- /.ck-nodes -->
+    </div><!-- /.ck-pipeline -->
+
+    <!-- ══════════════════════════════
+         TIER CARDS
+         ══════════════════════════════ -->
+    <div class="ck-tiers" aria-label="Dua tingkat arsitektur deteksi">
+
+      <!-- Card A | Tier 1 Local -->
+      <div class="ck-tier ck-tier--a">
+        <div class="ck-tier__corner" aria-hidden="true"></div>
+
+        <div class="ck-tier__tag">
+          <span class="ck-tier__tag-dot" aria-hidden="true"></span>
+          Tier 1 &nbsp;·&nbsp; Mesin Deteksi Lokal
+        </div>
+
+        <div class="ck-tier__icon" aria-hidden="true">
+          <!-- CPU / chip icon -->
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none"
+               stroke="var(--teal-400)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="5" y="5" width="14" height="14" rx="2"/>
+            <rect x="9" y="9" width="6" height="6" rx="1" stroke="var(--teal-300)" stroke-width="1.2"/>
+            <line x1="9"  y1="1" x2="9"  y2="5"/>
+            <line x1="15" y1="1" x2="15" y2="5"/>
+            <line x1="9"  y1="19" x2="9"  y2="23"/>
+            <line x1="15" y1="19" x2="15" y2="23"/>
+            <line x1="19" y1="9"  x2="23" y2="9"/>
+            <line x1="19" y1="15" x2="23" y2="15"/>
+            <line x1="1"  y1="9"  x2="5"  y2="9"/>
+            <line x1="1"  y1="15" x2="5"  y2="15"/>
+          </svg>
+        </div>
+
+        <h3 class="ck-tier__title">Deteksi Langsung di Perangkat</h3>
+
+        <p class="ck-tier__desc">
+          Bekerja secepat kilat tanpa jeda kirim. Sistem memindai ribuan pola risiko rekrutmen kerja ilegal langsung di perangkat, tanpa memerlukan jaringan internet untuk mendeteksi sinyal awal.
+        </p>
+
+        <div class="ck-tier__sep" aria-hidden="true"></div>
+
+        <ul class="ck-checklist" role="list" aria-label="Fitur Tier 1">
+          <li class="ck-check" role="listitem">
+            <div class="ck-check__icon" aria-hidden="true">
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none"
+                   stroke="var(--sage-500)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="2 6.5 4.5 9 10 3"/>
+              </svg>
+            </div>
+            <span class="ck-check__text">Berjalan penuh di perangkat tanpa kuota internet</span>
+          </li>
+          <li class="ck-check" role="listitem">
+            <div class="ck-check__icon" aria-hidden="true">
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none"
+                   stroke="var(--sage-500)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="2 6.5 4.5 9 10 3"/>
+              </svg>
+            </div>
+            <span class="ck-check__text">Respons instan di detik pesan masuk</span>
+          </li>
+          <li class="ck-check" role="listitem">
+            <div class="ck-check__icon" aria-hidden="true">
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none"
+                   stroke="var(--sage-500)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="2 6.5 4.5 9 10 3"/>
+              </svg>
+            </div>
+            <span class="ck-check__text">Teks tidak pernah meninggalkan penyimpanan ponsel</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Card B | Tier 2 AI -->
+      <div class="ck-tier ck-tier--b">
+        <div class="ck-tier__corner" aria-hidden="true"></div>
+
+        <div class="ck-tier__tag">
+          <span class="ck-tier__tag-dot" aria-hidden="true"></span>
+          Tier 2 &nbsp;·&nbsp; Analisis Semantik Mendalam
+        </div>
+
+        <div class="ck-tier__icon" aria-hidden="true">
+          <!-- Sparkle / AI icon -->
+          <svg width="26" height="26" viewBox="0 0 28 28" fill="none">
+            <path d="M14 3L16.1 10.7L24 13L16.1 15.3L14 23L11.9 15.3L4 13L11.9 10.7L14 3Z"
+                  fill="#A78BFA" opacity="0.90"/>
+            <path d="M22 3L22.9 5.9L26 7L22.9 8.1L22 11L21.1 8.1L18 7L21.1 5.9L22 3Z"
+                  fill="#7C3AED" opacity="0.70"/>
+            <path d="M6 19L6.75 21.4L9 22.2L6.75 23L6 25.4L5.25 23L3 22.2L5.25 21.4L6 19Z"
+                  fill="#C4B5FD" opacity="0.55"/>
+          </svg>
+        </div>
+
+        <h3 class="ck-tier__title">Analisis Bahasa &amp; Konteks</h3>
+
+        <p class="ck-tier__desc">
+          Membedah makna terselubung dan manipulasi bahasa yang sering kali lolos dari saringan biasa, dengan perlindungan identitas yang telah dianonimkan secara ketat demi keamanan privasimu.
+        </p>
+
+        <div class="ck-tier__sep" aria-hidden="true"></div>
+
+        <ul class="ck-checklist" role="list" aria-label="Fitur Tier 2">
+          <li class="ck-check" role="listitem">
+            <div class="ck-check__icon" aria-hidden="true">
+              <!-- Sparkle check -->
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none">
+                <path d="M6 1L6.9 4.2L10 5.5L6.9 6.8L6 10L5.1 6.8L2 5.5L5.1 4.2L6 1Z"
+                      fill="#C4B5FD" opacity="0.85"/>
+              </svg>
+            </div>
+            <span class="ck-check__text">Memahami kedok tawaran kerja dan manipulasi psikologis</span>
+          </li>
+          <li class="ck-check" role="listitem">
+            <div class="ck-check__icon" aria-hidden="true">
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none">
+                <path d="M6 1L6.9 4.2L10 5.5L6.9 6.8L6 10L5.1 6.8L2 5.5L5.1 4.2L6 1Z"
+                      fill="#C4B5FD" opacity="0.85"/>
+              </svg>
+            </div>
+            <span class="ck-check__text">Seluruh identitas personal dianonimkan terlebih dahulu</span>
+          </li>
+          <li class="ck-check" role="listitem">
+            <div class="ck-check__icon" aria-hidden="true">
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none">
+                <path d="M6 1L6.9 4.2L10 5.5L6.9 6.8L6 10L5.1 6.8L2 5.5L5.1 4.2L6 1Z"
+                      fill="#C4B5FD" opacity="0.85"/>
+              </svg>
+            </div>
+            <span class="ck-check__text">Melindungi keputusanmu sebelum terjebak lebih jauh</span>
+          </li>
+        </ul>
+      </div>
+
+    </div><!-- /.ck-tiers -->
+
+  </div><!-- /.ck-container -->
+</section>
+
+</body>
+</html>
