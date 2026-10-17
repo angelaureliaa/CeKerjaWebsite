@@ -12,8 +12,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/style.css?v=2" />
+  <link rel="stylesheet" href="css/hero.css?v=2" />
 </head>
 <body>
 
@@ -129,90 +129,12 @@
                   <!-- Scanner beam animation line -->
                   <div class="lux-phone__scan-beam"></div>
 
-                  <!-- Status bar -->
-                  <div class="lux-phone__sbar">
-                    <span class="lux-phone__sbar-time">09:41</span>
-                    <div class="lux-phone__sbar-icons">
-                      <i style="width:14px;height:5px;border-radius:3px;"></i>
-                      <i style="width:10px;height:5px;border-radius:3px;opacity:0.5;"></i>
-                      <i style="width:7px;height:7px;border-radius:50%;"></i>
-                    </div>
-                  </div>
-
-                  <!-- App bar -->
-                  <div class="lux-phone__appbar">
-                    <div class="lux-phone__appbar-left">
-                      <div class="lux-phone__app-logo">C</div>
-                      <div>
-                        <div class="lux-phone__app-title">CeKerja</div>
-                        <div class="lux-phone__app-sub">Lindungi dirimu</div>
-                      </div>
-                    </div>
-                    <div class="lux-phone__status-badge">
-                      <span class="lux-phone__status-dot"></span>
-                      AKTIF
-                    </div>
-                  </div>
-
-                  <!-- Notification feed -->
-                  <div class="lux-phone__feed">
-
-                    <!-- Danger card -->
-                    <div class="lux-notif lux-notif--danger">
-                      <div class="lux-notif__top">
-                        <div class="lux-notif__badge">
-                          <span class="lux-notif__badge-dot"></span>
-                          Risiko Tinggi
-                        </div>
-                        <span class="lux-notif__time">barusan</span>
-                      </div>
-                      <div class="lux-notif__body">Pola modus penipuan TKI terdeteksi dari pesan baru.</div>
-                      <div class="lux-notif__source">via WhatsApp &nbsp;·&nbsp; nomor tidak dikenal</div>
-                    </div>
-
-                    <!-- Safe card -->
-                    <div class="lux-notif lux-notif--safe">
-                      <div class="lux-notif__top">
-                        <div class="lux-notif__badge">
-                          <span class="lux-notif__badge-dot"></span>
-                          Aman, Dilewati
-                        </div>
-                        <span class="lux-notif__time">2m lalu</span>
-                      </div>
-                      <div class="lux-notif__body">Notifikasi bank tidak pernah kami sentuh.</div>
-                      <div class="lux-notif__source">OTP diblokir di filter awal</div>
-                    </div>
-
-                    <!-- Muted card -->
-                    <div class="lux-notif lux-notif--muted">
-                      <div class="lux-notif__top">
-                        <div class="lux-notif__badge">Dipantau</div>
-                        <span class="lux-notif__time">5m lalu</span>
-                      </div>
-                      <div class="lux-notif__body">Pemindaian pasif aktif di latar belakang.</div>
-                    </div>
-
-                  </div>
-
-                  <!-- Score strip -->
-                  <div class="lux-phone__scores">
-                    <div class="lux-score">
-                      <div class="lux-score__val lux-score__val--danger">87</div>
-                      <div class="lux-score__label">Skor risiko</div>
-                    </div>
-                    <div class="lux-score">
-                      <div class="lux-score__val lux-score__val--danger">3</div>
-                      <div class="lux-score__label">Pola cocok</div>
-                    </div>
-                    <div class="lux-score">
-                      <div class="lux-score__val lux-score__val--safe">&#10003;</div>
-                      <div class="lux-score__label">PII disamarkan</div>
-                    </div>
-                    <div class="lux-score">
-                      <div class="lux-score__val lux-score__val--teal">T1</div>
-                      <div class="lux-score__label">On-device</div>
-                    </div>
-                  </div>
+                  <!-- Real App Screenshot -->
+                  <img
+                    src="assets/images/cekerja-app-screen.jpg?v=3"
+                    alt="Tampilan Aplikasi CeKerja"
+                    class="lux-phone__screenshot"
+                  />
 
                 </div><!-- /.lux-phone__screen -->
               </div><!-- /.lux-phone__frame -->
@@ -410,7 +332,7 @@
             Semua yang Anda butuhkan, tidak lebih dari itu
           </h2>
           <p class="lx-section-sub">
-            CeKerja dirancang ramping. Tidak ada fitur yang tidak perlu, tidak ada data yang tidak perlu dikumpulkan.
+            Tidak ada fitur yang tidak perlu, tidak ada data yang tidak perlu dikumpulkan.
           </p>
         </header>
 
@@ -611,9 +533,6 @@
           <h2 class="lx-section-title" id="tim-heading">
             Dibangun dengan Dedikasi untuk Keamanan Pencari Kerja
           </h2>
-          <p class="lx-section-sub">
-            CeKerja adalah proyek kolaborasi yang lahir dari kepedulian nyata terhadap keselamatan pencari kerja Indonesia. Ini tim yang membangunnya.
-          </p>
         </header>
 
         <!-- Product Lead -->
@@ -624,14 +543,21 @@
             <span class="team-role-badge">1 orang</span>
           </div>
           <div class="team-grid team-grid--two">
-            <article class="member-card member-card--lead" aria-label="Profil Angel Aurelia, Product Lead">
-              <div class="member-card__avatar" aria-hidden="true">👤</div>
+            <article class="member-card member-card--lead" aria-label="Profil Angel Aurelia">
+              <div class="member-card__avatar" aria-hidden="true">
+                <img src="assets/team/angel.png" alt="Angel Aurelia" loading="lazy" />
+              </div>
               <div>
-                <div class="member-card__role">Product Lead &nbsp;·&nbsp; Privacy &amp; Compliance</div>
+                <div class="member-card__role">Founder &amp; Product Lead</div>
                 <h4 class="member-card__name">Angel Aurelia</h4>
-                <p class="member-card__bio member-card__bio--placeholder">Bio menyusul.</p>
+                <p class="member-card__bio" style="margin-bottom:0.5rem;">
+                  Desainer produk digital dengan fokus pada perancangan sistem yang berpusat pada pengguna (<em>human-centered design</em>). Mengembangkan arsitektur informasi, pengalaman antarmuka, dan alur interaksi CeKerja untuk menghadirkan pengalaman perlindungan digital yang intuitif.
+                </p>
+                <p class="member-card__bio" style="color:var(--text-muted);font-style:italic;font-size:0.8125rem;margin-bottom:0.75rem;">
+                  Digital product designer specializing in human-centered systems and interaction design. Leading the product architecture and UX strategy for CeKerja to build intuitive, user-first safety interventions.
+                </p>
                 <div class="member-card__links">
-                  <span class="member-card__link member-card__link--placeholder" aria-label="LinkedIn belum tersedia">LinkedIn</span>
+                  <a href="https://www.linkedin.com/in/angel-aurelia/" target="_blank" rel="noopener noreferrer" class="member-card__link">LinkedIn</a>
                 </div>
               </div>
             </article>
@@ -647,28 +573,34 @@
           </div>
           <div class="team-grid team-grid--two">
 
-            <article class="member-card" aria-label="Profil Backend Engineer 1">
-              <div class="member-card__avatar" aria-hidden="true">👤</div>
+            <article class="member-card" aria-label="Profil Ihsan Wardhana R.">
+              <div class="member-card__avatar" aria-hidden="true">
+                <img src="assets/team/ihsan.jpg" alt="Ihsan Wardhana R." loading="lazy" />
+              </div>
               <div>
-                <div class="member-card__role">Backend Engineer</div>
-                <h4 class="member-card__name" style="color:var(--text-micro);font-style:italic;">Nama menyusul</h4>
-                <p class="member-card__bio member-card__bio--placeholder">Bio menyusul.</p>
+                <div class="member-card__role">Back End Engineer</div>
+                <h4 class="member-card__name">Ihsan Wardhana R.</h4>
+                <p class="member-card__bio" style="margin-bottom:0.35rem;">Insinyur Perangkat Lunak Junior.</p>
+                <p class="member-card__bio" style="color:var(--text-muted);font-style:italic;font-size:0.8125rem;margin-bottom:0.75rem;">Junior Software Engineer</p>
                 <div class="member-card__links">
-                  <span class="member-card__link member-card__link--placeholder">LinkedIn</span>
-                  <span class="member-card__link member-card__link--placeholder">GitHub</span>
+                  <a href="https://www.linkedin.com/in/ihsan-wardhana-r/" target="_blank" rel="noopener noreferrer" class="member-card__link">LinkedIn</a>
+                  <a href="https://ihsanwd10.my.id" target="_blank" rel="noopener noreferrer" class="member-card__link">Portofolio</a>
                 </div>
               </div>
             </article>
 
-            <article class="member-card" aria-label="Profil Backend Engineer 2">
-              <div class="member-card__avatar" aria-hidden="true">👤</div>
+            <article class="member-card" aria-label="Profil Teresa Kaena">
+              <div class="member-card__avatar" aria-hidden="true">
+                <img src="assets/team/teresa.jpg" alt="Teresa Kaena" loading="lazy" />
+              </div>
               <div>
-                <div class="member-card__role">Backend Engineer</div>
-                <h4 class="member-card__name" style="color:var(--text-micro);font-style:italic;">Nama menyusul</h4>
-                <p class="member-card__bio member-card__bio--placeholder">Bio menyusul.</p>
+                <div class="member-card__role">Back End Engineer</div>
+                <h4 class="member-card__name">Teresa Kaena</h4>
+                <p class="member-card__bio" style="margin-bottom:0.35rem;">Apple Developer Academy '26. Membangun aplikasi yang menyelesaikan masalah nyata.</p>
+                <p class="member-card__bio" style="color:var(--text-muted);font-style:italic;font-size:0.8125rem;margin-bottom:0.75rem;">Apple Developer Academy '26. Builds apps that solve real problems.</p>
                 <div class="member-card__links">
-                  <span class="member-card__link member-card__link--placeholder">LinkedIn</span>
-                  <span class="member-card__link member-card__link--placeholder">GitHub</span>
+                  <a href="https://www.linkedin.com/in/teresakae/" target="_blank" rel="noopener noreferrer" class="member-card__link">LinkedIn</a>
+                  <a href="https://github.com/teresakae" target="_blank" rel="noopener noreferrer" class="member-card__link">GitHub</a>
                 </div>
               </div>
             </article>
@@ -685,28 +617,32 @@
           </div>
           <div class="team-grid team-grid--two">
 
-            <article class="member-card" aria-label="Profil Frontend Engineer 1">
-              <div class="member-card__avatar" aria-hidden="true">👤</div>
+            <article class="member-card" aria-label="Profil Waladi Lintang Novianto">
+              <div class="member-card__avatar" aria-hidden="true">
+                <img src="assets/team/waladi.jpg" alt="Waladi Lintang Novianto" loading="lazy" />
+              </div>
               <div>
-                <div class="member-card__role">Frontend Engineer</div>
-                <h4 class="member-card__name" style="color:var(--text-micro);font-style:italic;">Nama menyusul</h4>
-                <p class="member-card__bio member-card__bio--placeholder">Bio menyusul.</p>
+                <div class="member-card__role">Front End Engineer</div>
+                <h4 class="member-card__name">Waladi Lintang Novianto</h4>
+                <p class="member-card__bio" style="margin-bottom:0.35rem;">Menerjemahkan desain menjadi kode, memperbaiki tampilan yang berantakan, dan berusaha tidak merusak ThinkPad-ku.</p>
+                <p class="member-card__bio" style="color:var(--text-muted);font-style:italic;font-size:0.8125rem;margin-bottom:0.75rem;">Break designs into code, fix broken layouts, and try not to break my ThinkPad</p>
                 <div class="member-card__links">
-                  <span class="member-card__link member-card__link--placeholder">LinkedIn</span>
-                  <span class="member-card__link member-card__link--placeholder">GitHub</span>
+                  <a href="https://www.linkedin.com/in/waladi-lintang-novianto" target="_blank" rel="noopener noreferrer" class="member-card__link">LinkedIn</a>
+                  <a href="https://github.com/LintangNov" target="_blank" rel="noopener noreferrer" class="member-card__link">GitHub</a>
                 </div>
               </div>
             </article>
 
-            <article class="member-card" aria-label="Profil Frontend Engineer 2">
+            <article class="member-card" aria-label="Profil Airin Ristiana">
               <div class="member-card__avatar" aria-hidden="true">👤</div>
               <div>
-                <div class="member-card__role">Frontend Engineer</div>
-                <h4 class="member-card__name" style="color:var(--text-micro);font-style:italic;">Nama menyusul</h4>
-                <p class="member-card__bio member-card__bio--placeholder">Bio menyusul.</p>
+                <div class="member-card__role">Front End Engineer</div>
+                <h4 class="member-card__name">Airin Ristiana</h4>
+                <p class="member-card__bio" style="margin-bottom:0.35rem;">Dari konsep ke layar, didukung teknologi modern.</p>
+                <p class="member-card__bio" style="color:var(--text-muted);font-style:italic;font-size:0.8125rem;margin-bottom:0.75rem;">From concept to screen, powered by modern tech.</p>
                 <div class="member-card__links">
-                  <span class="member-card__link member-card__link--placeholder">LinkedIn</span>
-                  <span class="member-card__link member-card__link--placeholder">GitHub</span>
+                  <a href="https://www.linkedin.com/in/airinristiana" target="_blank" rel="noopener noreferrer" class="member-card__link">LinkedIn</a>
+                  <a href="https://porto-airin.vercel.app/" target="_blank" rel="noopener noreferrer" class="member-card__link">Portofolio</a>
                 </div>
               </div>
             </article>
@@ -719,32 +655,22 @@
           <div class="team-group__label">
             <h3 id="group-design-heading" style="font-size:1rem;font-weight:800;color:var(--text-head);white-space:nowrap;">UI/UX Designers</h3>
             <div class="team-group__divider"></div>
-            <span class="team-role-badge">2 orang</span>
+            <span class="team-role-badge">1 orang</span>
           </div>
           <div class="team-grid team-grid--two">
 
-            <article class="member-card" aria-label="Profil UI/UX Designer 1">
-              <div class="member-card__avatar" aria-hidden="true">👤</div>
-              <div>
-                <div class="member-card__role">UI/UX Designer</div>
-                <h4 class="member-card__name" style="color:var(--text-micro);font-style:italic;">Nama menyusul</h4>
-                <p class="member-card__bio member-card__bio--placeholder">Bio menyusul.</p>
-                <div class="member-card__links">
-                  <span class="member-card__link member-card__link--placeholder">LinkedIn</span>
-                  <span class="member-card__link member-card__link--placeholder">Portofolio</span>
-                </div>
+            <article class="member-card" aria-label="Profil Netrania Dewati Habibah">
+              <div class="member-card__avatar" aria-hidden="true">
+                <img src="assets/team/netrania.jpg" alt="Netrania Dewati Habibah" loading="lazy" />
               </div>
-            </article>
-
-            <article class="member-card" aria-label="Profil UI/UX Designer 2">
-              <div class="member-card__avatar" aria-hidden="true">👤</div>
               <div>
                 <div class="member-card__role">UI/UX Designer</div>
-                <h4 class="member-card__name" style="color:var(--text-micro);font-style:italic;">Nama menyusul</h4>
-                <p class="member-card__bio member-card__bio--placeholder">Bio menyusul.</p>
+                <h4 class="member-card__name">Netrania Dewati Habibah</h4>
+                <p class="member-card__bio" style="margin-bottom:0.35rem;">Lulusan Psikologi yang beralih menjadi desainer.</p>
+                <p class="member-card__bio" style="color:var(--text-muted);font-style:italic;font-size:0.8125rem;margin-bottom:0.75rem;">Psychology graduate turned designer</p>
                 <div class="member-card__links">
-                  <span class="member-card__link member-card__link--placeholder">LinkedIn</span>
-                  <span class="member-card__link member-card__link--placeholder">Portofolio</span>
+                  <a href="https://www.linkedin.com/in/netraniadh" target="_blank" rel="noopener noreferrer" class="member-card__link">LinkedIn</a>
+                  <a href="https://byntrania.framer.website/" target="_blank" rel="noopener noreferrer" class="member-card__link">Portofolio</a>
                 </div>
               </div>
             </article>
@@ -757,43 +683,21 @@
           <div class="team-group__label">
             <h3 id="group-socmed-heading" style="font-size:1rem;font-weight:800;color:var(--text-head);white-space:nowrap;">Social Media Team</h3>
             <div class="team-group__divider"></div>
-            <span class="team-role-badge">3 orang</span>
+            <span class="team-role-badge">1 orang</span>
           </div>
-          <div class="team-grid team-grid--three">
+          <div class="team-grid team-grid--two">
 
-            <article class="member-card" aria-label="Profil Content Creator 1">
-              <div class="member-card__avatar" aria-hidden="true">👤</div>
+            <article class="member-card" aria-label="Profil I Made Jabin Arya Dedanda">
+              <div class="member-card__avatar" aria-hidden="true">
+                <img src="assets/team/jabin.jpg" alt="I Made Jabin Arya Dedanda" loading="lazy" />
+              </div>
               <div>
                 <div class="member-card__role">Content Creator</div>
-                <h4 class="member-card__name" style="color:var(--text-micro);font-style:italic;">Nama menyusul</h4>
-                <p class="member-card__bio member-card__bio--placeholder">Bio menyusul.</p>
+                <h4 class="member-card__name">I Made Jabin Arya Dedanda</h4>
+                <p class="member-card__bio" style="margin-bottom:0.35rem;">Mahasiswa Hubungan Internasional di Universitas Udayana. Memiliki ketertarikan pada komunikasi dan edukasi publik, ia senang mengubah isu kompleks menjadi konten yang jelas dan menarik. Di CeKerja, ia berperan sebagai anggota Tim Media Sosial yang membuat konten edukasi untuk meningkatkan kesadaran terhadap modus rekrutmen kerja palsu dan risiko perdagangan orang.</p>
+                <p class="member-card__bio" style="color:var(--text-muted);font-style:italic;font-size:0.8125rem;margin-bottom:0.75rem;">An International Relations student at Udayana University. With passion for communication and public education, he enjoys transforming complex issues into clear and engaging content. At CeKerja, he serves as a member of the Social Media Team, creating educational content that promotes awareness of fraudulent recruitment schemes and human trafficking risks.</p>
                 <div class="member-card__links">
-                  <span class="member-card__link member-card__link--placeholder">LinkedIn</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="member-card" aria-label="Profil Content Creator 2">
-              <div class="member-card__avatar" aria-hidden="true">👤</div>
-              <div>
-                <div class="member-card__role">Content Creator</div>
-                <h4 class="member-card__name" style="color:var(--text-micro);font-style:italic;">Nama menyusul</h4>
-                <p class="member-card__bio member-card__bio--placeholder">Bio menyusul.</p>
-                <div class="member-card__links">
-                  <span class="member-card__link member-card__link--placeholder">LinkedIn</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="member-card" aria-label="Profil Graphic Designer">
-              <div class="member-card__avatar" aria-hidden="true">👤</div>
-              <div>
-                <div class="member-card__role">Graphic Designer</div>
-                <h4 class="member-card__name" style="color:var(--text-micro);font-style:italic;">Nama menyusul</h4>
-                <p class="member-card__bio member-card__bio--placeholder">Bio menyusul.</p>
-                <div class="member-card__links">
-                  <span class="member-card__link member-card__link--placeholder">LinkedIn</span>
-                  <span class="member-card__link member-card__link--placeholder">Portofolio</span>
+                  <a href="https://www.linkedin.com/in/i-made-jabin-arya-dedanda-939195354" target="_blank" rel="noopener noreferrer" class="member-card__link">LinkedIn</a>
                 </div>
               </div>
             </article>

@@ -446,8 +446,8 @@ html, body {
 /* Phone frame */
 .lux-phone {
   position: relative;
-  width: 250px;
-  transform: perspective(1000px) rotateX(8deg);
+  width: 330px;
+  transform: perspective(1000px) rotateX(6deg);
   animation: lux-float 7s ease-in-out infinite;
   filter: drop-shadow(0 32px 64px rgba(15,69,96,0.18))
           drop-shadow(0 8px 20px rgba(15,69,96,0.10));
@@ -459,8 +459,8 @@ html, body {
           drop-shadow(0 12px 28px rgba(15,69,96,0.14));
 }
 @keyframes lux-float {
-  0%,100% { transform: perspective(1000px) rotateX(8deg) translateY(0px); }
-  50%      { transform: perspective(1000px) rotateX(8deg) translateY(-10px); }
+  0%,100% { transform: perspective(1000px) rotateX(6deg) translateY(0px); }
+  50%      { transform: perspective(1000px) rotateX(6deg) translateY(-10px); }
 }
 
 /* Glow halo behind phone */
@@ -476,9 +476,9 @@ html, body {
 
 .lux-phone__frame {
   background: linear-gradient(170deg, #1a3347 0%, #0f2233 55%, #091b28 100%);
-  border-radius: 38px;
-  padding: 12px 10px 18px;
-  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 40px;
+  padding: 10px 10px 12px;
+  border: 1px solid rgba(255,255,255,0.12);
   position: relative;
   overflow: hidden;
   box-shadow:
@@ -488,16 +488,16 @@ html, body {
 
 /* Camera island */
 .lux-phone__island {
-  width: 68px; height: 24px;
+  width: 60px; height: 18px;
   background: #060e14;
-  border-radius: 14px;
-  margin: 0 auto 8px;
+  border-radius: 12px;
+  margin: 0 auto 6px;
   display: flex; align-items: center; justify-content: center;
   gap: 6px;
   border: 1px solid rgba(255,255,255,0.05);
 }
 .lux-phone__island .cam {
-  width: 8px; height: 8px;
+  width: 7px; height: 7px;
   background: #101e29;
   border-radius: 50%;
   border: 1px solid rgba(255,255,255,0.08);
@@ -510,8 +510,16 @@ html, body {
 
 .lux-phone__screen {
   background: #F0F4F8;
-  border-radius: 28px;
+  border-radius: 26px;
   overflow: hidden;
+  position: relative;
+}
+
+.lux-phone__screenshot {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 24px;
 }
 
 /* Status bar */
@@ -688,7 +696,7 @@ html, body {
 @media (min-width: 900px) {
   .hero-lux__headline { font-size: clamp(2.75rem, 5vw, 4.25rem); }
   .hero-lux__phone-col { margin-top: 2rem; }
-  .lux-phone { width: 260px; }
+  .lux-phone { width: 340px; }
 }
 
 /* ============================================================
@@ -1540,7 +1548,7 @@ html, body {
   .hero-lux__trust-micro { justify-content: center; }
   .hero-lux__cta-wrap { align-items: center; }
   .hero-lux__phone-col { margin-top: 2.5rem; }
-  .lux-phone { width: 270px; }
+  .lux-phone { width: 350px; }
 }
 
 /* ── Secondary Nav Pill ── */
