@@ -1895,6 +1895,7 @@ html, body {
 }
 
 .vertical-timeline__line {
+  display: none;
   position: absolute;
   top: 64px;
   bottom: 64px;
@@ -1907,6 +1908,7 @@ html, body {
 
 @media (min-width: 768px) {
   .vertical-timeline__line {
+    display: block;
     left: 50%;
     transform: translateX(-50%);
   }
